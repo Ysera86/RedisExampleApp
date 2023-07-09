@@ -1,0 +1,42 @@
+docker run -d -p 6379:6379 --name redis-container redis;
+
+
+-d  > Run container in background and print container ID    
+     (detach : container ayaða kalkýnca ona baðlanma, içindeki loglarý alma )
+-p 6379:6379 > bendeki portu : container içindeki portu
+--name  redis-container > containera verdiðim isim
+redis > imajýn hub.dockercomdaki ismi, tag vermediðim için sonuncuyu çekecek
+
+
+
+docker komutlarý : https://docs.docker.com/engine/reference/commandline/run/
+The docker run command creates running containers from images and can run commands inside them. When using the docker run command, a container can run a default action (if it has one), a user specified action, or a shell to be used interactively.
+
+
+Another Redis Desktop Manager
+https://github.com/qishibo/AnotherRedisDesktopManager/releases
+
+
+------------------------------------------------------------------
+
+Cache projesi Class Library.
+Class Library projeleri standard oluþturulmalýymýþ. Standard 2.1 oluþturduk, .net 7 vs oluþtursaydýk sadece core projelerinde kullanýlabilirmiþ,  standard olunca xamarin , core, windows her yerde kullanýlabilirmiþ.
+
+------------------------------------------------------------------
+
+Diyelim ki productlar cache te varsa ordan yoksa dbden gelsn denildi.
+
+Controller deðiþtirmemeliyim : SOLID.O-C prensibine ters
+Repository deðiþtirmemeliyim : SOLID.S prensibine ters
+
+
+O zmaan imdada Decorator Design Pattern koþuyor : ProductController ProductRepository'i biliyor dbden çalýþan o zaman ProductRepositoryWithCache diye yeni bir class implement ederim!   > Önemli : Controller hangi Interface'i biliyorsa!
+
+Normalde : Controller > Service > Repository : yine yeni repo yazardýk çnk data çeken yer orasý. Redis nosql ve data çekiyor cache olayý o
+
+------------------------------------------------------------------
+Olay bu : Design patterns hangi sorunlara çare oluyor ?
+
+Decorator Design Pattern  : Uygulamanýn kodlarýný deðiþtirmeden yeni davranýþlar eklemeye imkan verir
+Strategy Design Pattern : runtimeda algoritma deðiþikliði
+Adapter Design Pattern : bir projeye, varolan yapýyý bozmadan  yeni 3rd party lib nasýl eklerim

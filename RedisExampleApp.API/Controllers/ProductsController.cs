@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using RedisExampleApp.API.Models;
 using RedisExampleApp.API.Repository;
+using RedisExampleApp.Cache;
+using StackExchange.Redis;
 
 namespace RedisExampleApp.API.Controllers
 {
@@ -11,9 +13,41 @@ namespace RedisExampleApp.API.Controllers
     {
         private readonly IProductRepository _repository;
 
+
+        #region Sample 1
+
+        //private readonly RedisService _redisService;
+
+        //public ProductsController(IProductRepository repository, RedisService redisService)
+        //{
+        //    _repository = repository;
+
+        //    _redisService = redisService;
+
+        //    var db = _redisService.GetDb(0);
+        //    db.StringSet("isim", "Ahmet");
+        //    // db.StringSet("isim:1", "Ahmet");
+        //} 
+
+        #endregion
+
+        #region Sample 2
+
+        //private readonly IDatabase _database;
+
+        //public ProductsController(IProductRepository repository, IDatabase database)
+        //{
+        //    _repository = repository;
+
+        //    _database = database;
+        //    _database.StringSet("soyisim", "Mehmet");
+        //}
+
+        #endregion
+
         public ProductsController(IProductRepository repository)
         {
-            _repository = repository;
+            _repository = repository;         
         }
 
         [HttpGet]
