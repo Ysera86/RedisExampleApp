@@ -2,18 +2,18 @@
 RedisExampleApp API Project
 -----------------------------------------------------------------------------------------------
 
-docker run -d -p 6379:6379 --name redis-container redis;
+<code> docker run -d -p 6379:6379 --name redis-container redis; </code>
 
 
--d  > Run container in background and print container ID    
+1- -d  > Run container in background and print container ID    
      (detach : container ayağa kalkınca ona bağlanma, içindeki logları alma )
--p 6379:6379 > bendeki portu : container içindeki portu
---name  redis-container > containera verdiğim isim
-redis > imajın hub.dockercomdaki ismi, tag vermediğim için sonuncuyu çekecek
+2- -p 6379:6379 > bendeki portu : container içindeki portu
+3- --name  redis-container > containera verdiğim isim
+4- redis > imajın hub.dockercomdaki ismi, tag vermediğim için sonuncuyu çekecek
 
 
 
-docker komutları : https://docs.docker.com/engine/reference/commandline/run/
+docker komutları :  [Docker Docs] https://docs.docker.com/engine/reference/commandline/run/
 The docker run command creates running containers from images and can run commands inside them. When using the docker run command, a container can run a default action (if it has one), a user specified action, or a shell to be used interactively.
 
 
@@ -41,7 +41,7 @@ Normalde : Controller > Service > Repository : yine yeni repo yazardık çnk dat
 ------------------------------------------------------------------
 Olay bu : Design patterns hangi sorunlara çare oluyor ?
 
-Decorator Design Pattern  : Uygulamanın kodlarını değiştirmeden yeni davranışlar eklemeye imkan verir, cache , log vs eklemek için güzel
-Strategy Design Pattern : runtimeda algoritma değişikliği
-Adapter Design Pattern : bir projeye, varolan yapıyı bozmadan  yeni 3rd party lib nasıl eklerim
-Bridge Design Pattern : tüm dp (23 tane design pattern) mantığını anlamak için : Has-A Is-A
+- Decorator Design Pattern  : Uygulamanın kodlarını değiştirmeden yeni davranışlar eklemeye imkan verir, cache , log vs eklemek için güzel
+- Strategy Design Pattern : runtimeda algoritma değişikliği
+- Adapter Design Pattern : bir projeye, varolan yapıyı bozmadan  yeni 3rd party lib nasıl eklerim
+- Bridge Design Pattern : tüm dp (23 tane design pattern) mantığını anlamak için : Has-A Is-A
