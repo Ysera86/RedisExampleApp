@@ -1,37 +1,36 @@
-# RedisExampleApp .NET 7
-RedisExampleApp API Project
+# RedisExampleApp .NET 7    > RedisExampleApp API Project
+
 -----------------------------------------------------------------------------------------------
 
 <code> docker run -d -p 6379:6379 --name redis-container redis; </code>
 
 
-1- -d  > Run container in background and print container ID    
+1. -d  > Run container in background and print container ID    
      (detach : container ayağa kalkınca ona bağlanma, içindeki logları alma )
-2- -p 6379:6379 > bendeki portu : container içindeki portu
-3- --name  redis-container > containera verdiğim isim
-4- redis > imajın hub.dockercomdaki ismi, tag vermediğim için sonuncuyu çekecek
+2. -p 6379:6379 > bendeki portu : container içindeki portu
+3. --name  redis-container > containera verdiğim isim
+4. redis > imajın hub.dockercomdaki ismi, tag vermediğim için sonuncuyu çekecek
 
+Docker komutları :  **[Docker Docs](https://docs.docker.com/engine/reference/commandline/run/)**
 
-
-docker komutları :  [Docker Docs](https://docs.docker.com/engine/reference/commandline/run/)
 The docker run command creates running containers from images and can run commands inside them. When using the docker run command, a container can run a default action (if it has one), a user specified action, or a shell to be used interactively.
 
 
-
-[Another Redis Desktop Manager  - Download](https://github.com/qishibo/AnotherRedisDesktopManager/releases)
+**[Another Redis Desktop Manager  - Download](https://github.com/qishibo/AnotherRedisDesktopManager/releases)**
 
 
 ------------------------------------------------------------------
 
 Cache projesi Class Library.
-Class Library projeleri standard oluşturulmalıymış. Standard 2.1 oluşturduk, .net 7 vs oluştursaydık sadece core projelerinde kullanılabilirmiş,  standard olunca xamarin , core, windows her yerde kullanılabilirmiş.
+
+* Class Library projeleri standard oluşturulmalıymış. Standard 2.1 oluşturduk, .net 7 vs oluştursaydık sadece core projelerinde kullanılabilirmiş,  standard olunca xamarin , core, windows her yerde kullanılabilirmiş.
 
 ------------------------------------------------------------------
 
 Diyelim ki productlar cache te varsa ordan yoksa dbden gelsn denildi.
 
-Controller değiştirmemeliyim : SOLID.O-C prensibine ters
-Repository değiştirmemeliyim : SOLID.S prensibine ters
+1. Controller değiştirmemeliyim : SOLID.O-C prensibine ters
+2. Repository değiştirmemeliyim : SOLID.S prensibine ters
 
 
 O zmaan imdada Decorator Design Pattern koşuyor : ProductController ProductRepository'i biliyor dbden çalışan o zaman ProductRepositoryWithCache diye yeni bir class implement ederim!   > Önemli : Controller hangi Interface'i biliyorsa!
@@ -39,6 +38,7 @@ O zmaan imdada Decorator Design Pattern koşuyor : ProductController ProductRepo
 Normalde : Controller > Service > Repository : yine yeni repo yazardık çnk data çeken yer orası. Redis nosql ve data çekiyor cache olayı o
 
 ------------------------------------------------------------------
+
 Olay bu : Design patterns hangi sorunlara çare oluyor ?
 
 - Decorator Design Pattern  : Uygulamanın kodlarını değiştirmeden yeni davranışlar eklemeye imkan verir, cache , log vs eklemek için güzel
