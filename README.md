@@ -21,16 +21,16 @@ The docker run command creates running containers from images and can run comman
 
 ------------------------------------------------------------------
 
-Cache projesi Class Library.
+> Cache projesi Class Library.
 
-* Class Library projeleri standard oluşturulmalıymış. Standard 2.1 oluşturduk, .net 7 vs oluştursaydık sadece core projelerinde kullanılabilirmiş,  standard olunca xamarin , core, windows her yerde kullanılabilirmiş.
+>> Class Library projeleri standard oluşturulmalıymış. Standard 2.1 oluşturduk, .net 7 vs oluştursaydık sadece core projelerinde kullanılabilirmiş,  standard olunca xamarin , core, windows her yerde kullanılabilirmiş.
 
 ------------------------------------------------------------------
 
 Diyelim ki productlar cache te varsa ordan yoksa dbden gelsn denildi.
 
 - Controller değiştirmemeliyim : SOLID.O-C prensibine ters
--  Repository değiştirmemeliyim : SOLID.S prensibine ters
+- Repository değiştirmemeliyim : SOLID.S prensibine ters
 
 
 O zmaan imdada Decorator Design Pattern koşuyor : ProductController ProductRepository'i biliyor dbden çalışan o zaman ProductRepositoryWithCache diye yeni bir class implement ederim!   > Önemli : Controller hangi Interface'i biliyorsa!
