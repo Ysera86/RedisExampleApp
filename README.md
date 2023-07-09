@@ -5,11 +5,11 @@
 <code> docker run -d -p 6379:6379 --name redis-container redis; </code>
 
 
-1. -d  > Run container in background and print container ID    
+- -d  > Run container in background and print container ID    
      (detach : container ayağa kalkınca ona bağlanma, içindeki logları alma )
-2. -p 6379:6379 > bendeki portu : container içindeki portu
-3. --name  redis-container > containera verdiğim isim
-4. redis > imajın hub.dockercomdaki ismi, tag vermediğim için sonuncuyu çekecek
+- -p 6379:6379 > bendeki portu : container içindeki portu
+- --name  redis-container > containera verdiğim isim
+- redis > imajın hub.dockercomdaki ismi, tag vermediğim için sonuncuyu çekecek
 
 Docker komutları :  **[Docker Docs](https://docs.docker.com/engine/reference/commandline/run/)**
 
@@ -29,8 +29,8 @@ Cache projesi Class Library.
 
 Diyelim ki productlar cache te varsa ordan yoksa dbden gelsn denildi.
 
-1. Controller değiştirmemeliyim : SOLID.O-C prensibine ters
-2. Repository değiştirmemeliyim : SOLID.S prensibine ters
+- Controller değiştirmemeliyim : SOLID.O-C prensibine ters
+-  Repository değiştirmemeliyim : SOLID.S prensibine ters
 
 
 O zmaan imdada Decorator Design Pattern koşuyor : ProductController ProductRepository'i biliyor dbden çalışan o zaman ProductRepositoryWithCache diye yeni bir class implement ederim!   > Önemli : Controller hangi Interface'i biliyorsa!
