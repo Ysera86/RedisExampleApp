@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using RedisExampleApp.API.Models;
 using RedisExampleApp.API.Repository;
+using RedisExampleApp.API.Services;
 using RedisExampleApp.Cache;
 using StackExchange.Redis;
 
@@ -11,8 +12,6 @@ namespace RedisExampleApp.API.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly IProductRepository _repository;
-
 
         #region Sample 1
 
@@ -45,27 +44,42 @@ namespace RedisExampleApp.API.Controllers
 
         #endregion
 
-        public ProductsController(IProductRepository repository)
+        // nihayetinde
+        #region Controller artık repo değil servis bilecek
+
+        //private readonly IProductRepository _repository;
+
+        //public ProductsController(IProductRepository repository)
+        //{
+        //    _repository = repository;
+        //} 
+        #endregion
+
+        private readonly IProductService _productService;
+        public ProductsController(IProductService productService)
         {
-            _repository = repository;         
+            _productService = productService;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(await _repository.GetAllAsync());
+            //return Ok(await _repository.GetAllAsync());
+            return Ok(await _productService.GetAllAsync());
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            return Ok(await _repository.GetByIdAsync(id));
+            //return Ok(await _repository.GetByIdAsync(id));
+            return Ok(await _productService.GetByIdAsync(id));
         }
 
         [HttpPost]
         public async Task<IActionResult> Create(Product product)
         {
-            return Created(string.Empty, await _repository.CreateAsync(product));
+            //return Created(string.Empty, await _repository.CreateAsync(product));
+            return Created(string.Empty, await _productService.CreateAsync(product));
         }
     }
 }

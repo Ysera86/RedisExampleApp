@@ -37,6 +37,7 @@ Normalde : Controller > Service > Repository : yine yeni repo yazardýk çnk data 
 ------------------------------------------------------------------
 Olay bu : Design patterns hangi sorunlara çare oluyor ?
 
-Decorator Design Pattern  : Uygulamanýn kodlarýný deðiþtirmeden yeni davranýþlar eklemeye imkan verir
+Decorator Design Pattern  : Uygulamanýn kodlarýný deðiþtirmeden yeni davranýþlar eklemeye imkan verir, cache , log vs eklemek için güzel
 Strategy Design Pattern : runtimeda algoritma deðiþikliði
 Adapter Design Pattern : bir projeye, varolan yapýyý bozmadan  yeni 3rd party lib nasýl eklerim
+Bridge Design Pattern : tüm dp (23 tane design pattern) mantýðýný anlamak için : Has-A Is-A

@@ -55,7 +55,7 @@ namespace RedisExampleApp.API.Repository
 
         public async Task<Product> GetByIdAsync(int id)
         {
-            if (!await _cacheRepository.KeyExistsAsync(productKey))
+            if (await _cacheRepository.KeyExistsAsync(productKey))
             {
                 var product = await _cacheRepository.HashGetAsync(productKey, id);
                 return product.HasValue ? JsonSerializer.Deserialize<Product>(product) : null;
