@@ -13,12 +13,12 @@ RedisExampleApp API Project
 
 
 
-docker komutları :  [Docker Docs] https://docs.docker.com/engine/reference/commandline/run/
+docker komutları :  [Docker Docs](https://docs.docker.com/engine/reference/commandline/run/)
 The docker run command creates running containers from images and can run commands inside them. When using the docker run command, a container can run a default action (if it has one), a user specified action, or a shell to be used interactively.
 
 
-Another Redis Desktop Manager
-https://github.com/qishibo/AnotherRedisDesktopManager/releases
+
+[Another Redis Desktop Manager  - Download](https://github.com/qishibo/AnotherRedisDesktopManager/releases)
 
 
 ------------------------------------------------------------------
